@@ -1,10 +1,10 @@
 {
-  "name": "@mozilla-protocol/core",
+  "name": "@craigcook-protocol-theme-test/core",
   "version": "11.0.1",
   "description": "A design system for Mozilla's websites.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mozilla/protocol.git"
+    "url": "git+https://github.com/craigcook/protocol-theme-test.git"
   },
   "keywords": [
     "mozilla",
@@ -16,9 +16,9 @@
   "author": "Mozilla",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/mozilla/protocol/issues"
+    "url": "https://github.com/craigcook/protocol-theme-test/issues"
   },
-  "homepage": "https://github.com/mozilla/protocol",
+  "homepage": "https://github.com/craigcook/protocol-theme-test",
   "main": "protocol/css/protocol.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
