@@ -7,13 +7,13 @@
 .mzp-u-title-xxl {
     @include text-title-xxl;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }
@@ -23,13 +23,13 @@
 .mzp-u-title-xl {
     @include text-title-xl;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }
@@ -39,13 +39,13 @@
 .mzp-u-title-lg {
     @include text-title-lg;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }
@@ -55,13 +55,13 @@
 .mzp-u-title-md {
     @include text-title-md;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }
@@ -71,13 +71,13 @@
 .mzp-u-title-sm {
     @include text-title-sm;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }
@@ -87,13 +87,13 @@
 .mzp-u-title-xs {
     @include text-title-xs;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }
@@ -103,13 +103,13 @@
 .mzp-u-title-xxs {
     @include text-title-xxs;
 
-    .mzp-t-mozilla {
+    .mzp-t-brand-mozilla {
         & {
             @include font-mozilla;
         }
     }
 
-    .mzp-t-firefox {
+    .mzp-t-brand-firefox {
         & {
             @include font-firefox;
         }

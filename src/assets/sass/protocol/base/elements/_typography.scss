@@ -11,15 +11,15 @@ h1, h2, h3, h4, h5, h6, legend {
 }
 
 // Mozilla theme class for headlines using Zilla.
-.mzp-t-mozilla {
-    h1, h2, h3, h4 {
+.mzp-t-brand-mozilla {
+    h1, h2, h3, h4, h5 , h6 {
         @include font-mozilla;
     }
 }
 
-.mzp-t-firefox {
+.mzp-t-brand-firefox {
     // Firefox theme class for headlines.
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, h5, h6 {
         @include font-firefox;
     }
 
