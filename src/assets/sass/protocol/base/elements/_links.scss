@@ -30,9 +30,6 @@
 }
 
 .mzp-c-cta-link {
+    font-family: get-theme('button-font-family');
     font-weight: bold;
-
-    .mzp-t-firefox & {
-        @include font-firefox;
-    }
 }

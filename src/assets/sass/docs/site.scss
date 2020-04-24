@@ -11,6 +11,18 @@
     @media #{$mq-md} {
         padding-left: 24vw;
     }
+
+    h1:not(> .protosite-pattern-embed) {
+        @include text-title-lg;
+    }
+
+    h2:not(> .protosite-pattern-embed) {
+        @include text-title-md;
+    }
+
+    h3:not(> .protosite-pattern-embed) {
+        @include text-title-sm;
+    }
 }
 
 // Nav sidebar
@@ -79,6 +91,7 @@
 
 .protosite-nav-menu-title {
     @include text-title-xs;
+    color: #fff;
 }
 
 .protosite-nav-main-item {
@@ -100,13 +113,13 @@
 
 // Color swatches
 .protosite-swatch-gallery {
-    margin: 0 0 40px;
+    margin: 0 0 $spacing-lg;
 
     .protosite-swatch {
         margin: 0 0 1.5em;
         min-height: 100px;
         overflow: hidden;
-        padding-left: 120px;
+        padding-left: $layout-xl;
         position: relative;
 
         .protosite-swatch-values {
@@ -120,25 +133,29 @@
     }
 
     .protosite-swatch-image {
-        height: auto;
+        height: 100%;
         left: 0;
         position: absolute;
-        width: 100px;
+        width: 64px;
     }
 
     .protosite-swatch-name {
         @include font-base;
-        @include text-title-sm;
+        @include text-title-xs;
     }
 
     @media #{$mq-md} {
         columns: 2 auto;
-        column-gap: 30px;
+        column-gap: $spacing-lg;
+    }
+
+    @media #{$mq-lg} {
+        columns: 3 auto;
     }
 }
 
 .protosite-pattern-embed {
-    border-radius: 3px;
+    border-radius: $border-radius-md;
     border: 1px solid rgba(0, 0, 0, .2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
     padding: 10px 20px;
@@ -248,6 +265,10 @@
     }
 }
 
+.protosite-page-title {
+    @include text-title-xl;
+}
+
 .protosite-pattern-title {
     @include text-title-md;
 }
@@ -324,18 +345,21 @@
 
 // token list
 .protosite-token-list {
-    margin: 40px 0 20px;
+    margin: $spacing-lg 0;
 
     td {
-        padding: 20px 20px 20px 0;
+        border-bottom: 1px solid $color-marketing-gray-20;
+        padding: $spacing-md 0;
+        vertical-align: top;
     }
 
     th {
-        text-align: left;
+        border-bottom: 1px solid $color-marketing-gray-20;
+        text-align: start;
+        vertical-align: top;
     }
 
     @media #{$mq-lg} {
-
         td {
             max-width: 40em;
         }
