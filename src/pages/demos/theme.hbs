@@ -1,0 +1,29 @@
+---
+title: Theme
+layout: blank
+labels:
+  - inprogress
+  - prototype
+styles:
+  - theme
+---
+
+{{#with (data "specimens")}}
+<div class="mzp-l-content mzp-t-narrow">
+  <div class="container">
+    <h1 class="title">Title XXL</h1>
+    <p class="intro">{{sentence}}</p>
+    <p>{{paragraph}}</p>
+    <p class="note">{{heading}}</p>
+
+    <hr>
+
+    <h1>{{heading}}</h1>
+    <h2>{{heading}}</h2>
+    <h3>{{heading}}</h3>
+    <h4>{{heading}}</h4>
+    <h5>{{heading}}</h5>
+    <h6>{{heading}}</h6>
+  </div>
+</div>
+{{/with}}

@@ -120,6 +120,11 @@ $text-display-line-height: $text-title-line-height;
 @mixin text-display-xxs { @include text-title-xxs; }
 
 // body copy
+@mixin text-body-xl {
+    @include font-size(21px);
+    line-height: $text-body-line-height;
+}
+
 @mixin text-body-lg {
     @include font-size(18px);
     line-height: $text-body-line-height;

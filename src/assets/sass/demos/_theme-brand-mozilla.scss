@@ -1,0 +1,36 @@
+@import '../protocol/includes/lib';
+
+$theme-fonts: (
+    title-font-family: $font-zilla-slab,
+    body-font-family: $font-inter,
+);
+
+$theme-colors: (
+    title-text-color: $color-black,
+    body-text-color: $color-black,
+);
+
+$theme-type-scale: (
+    title-xxl-size: 76px,
+    title-xxl-line-height: 1,
+    title-xl-size: 66px,
+    title-xl-line-height: 1,
+    title-lg-size: 56px,
+    title-lg-line-height: 1,
+    title-md-size: 48px,
+    title-md-line-height: 1,
+    title-sm-size: 38px,
+    title-sm-line-height: 1,
+    title-xs-size: 28px,
+    title-xs-line-height: 1,
+    title-xxs-size: 24px,
+    title-xxs-line-height: 1,
+    title-xxxs-size: 16px,
+    title-xxxs-line-height: 1,
+    body-xl-size: 21px,
+    body-lg-size: 18px,
+    body-md-size: 16px,
+    body-sm-size: 14px,
+    body-xs-size: 12px,
+    body-line-height: 1.5,
+);
