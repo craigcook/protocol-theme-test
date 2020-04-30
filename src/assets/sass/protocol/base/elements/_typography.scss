@@ -6,26 +6,16 @@
 
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: map-get($theme, 'title-font-family');
+    color: map-get($theme, 'title-text-color');
     font-weight: bold;
     margin: 0 0 .5em;
-}
 
-// Mozilla theme class for headlines using Zilla.
-.mzp-t-mozilla {
-    h1, h2, h3, h4 {
-        @include font-mozilla;
+    .mpz-t-dark & {
+        color: map-get($theme, 'title-text-color-light');
     }
 }
 
-.mzp-t-firefox {
-    // Firefox theme class for headlines.
-    h1, h2, h3, h4 {
-        @include font-firefox;
-    }
-
-    // type in Firefox themes is off-black
-    color: $color-ink-80;
-}
 
 // Type scale defined in includes/mixins/_typography.scss
 h1 {

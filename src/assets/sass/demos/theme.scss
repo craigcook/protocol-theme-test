@@ -4,117 +4,9 @@
 
 //* -------------------------------------------------------------------------- */
 // Theme test
-
-@import 'theme-brand-firefox';
 @import '../protocol/includes/lib';
 @import '../docs/protocol';
 @import '../docs/protocol-extra';
-
-
-
-
-// Get a type value from the $theme-type-scale map
-@function type-scale($scale) {
-  @if not $scale {
-    @return false;
-  }
-
-  @if not map-has-key($theme-type-scale, $scale) {
-    @error '`#{$scale}` is not a valid type scale token. '
-      + 'Valid tokens: #{map-keys($theme-type-scale)}';
-  }
-
-  @return map-get($theme-type-scale, $scale);
-}
-
-
-
-@mixin test-text-title-xxl {
-    @include font-size(type-scale('title-xl-size'));
-    line-height: type-scale('title-xl-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-xxl-size'));
-        line-height: type-scale('title-xxl-line-height');
-    }
-}
-
-
-@mixin test-text-title-xl {
-    @include font-size(type-scale('title-lg-size'));
-    line-height: type-scale('title-lg-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-xl-size'));
-        line-height: type-scale('title-xl-line-height');
-    }
-}
-
-@mixin test-text-title-lg {
-    @include font-size(type-scale('title-md-size'));
-    line-height: type-scale('title-md-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-lg-size'));
-        line-height: type-scale('title-lg-line-height');
-    }
-}
-
-@mixin test-text-title-md {
-    @include font-size(type-scale('title-sm-size'));
-    line-height: type-scale('title-sm-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-md-size'));
-        line-height: type-scale('title-md-line-height');
-    }
-}
-
-@mixin test-text-title-sm {
-    @include font-size(type-scale('title-xs-size'));
-    line-height: type-scale('title-xs-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-sm-size'));
-        line-height: type-scale('title-sm-line-height');
-    }
-}
-
-@mixin test-text-title-xs {
-    @include font-size(type-scale('title-xxs-size'));
-    line-height: type-scale('title-xxs-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-xs-size'));
-        line-height: type-scale('title-xs-line-height');
-    }
-}
-
-@mixin test-text-title-xxs {
-    @include font-size(type-scale('title-xxxs-size'));
-    line-height: type-scale('title-xxxs-line-height');
-
-    @media #{$mq-md} {
-        @include font-size(type-scale('title-xxs-size'));
-        line-height: type-scale('title-xxs-line-height');
-    }
-}
-
-@mixin test-text-title-xxxs {
-    @include font-size(type-scale('title-xxxs-size'));
-    line-height: type-scale('title-xxxs-line-height');
-}
-
-@mixin test-text-body-xl {
-    @include font-size(type-scale('body-xl-size'));
-    line-height: $text-body-line-height;
-}
-
-@mixin test-text-body-xs {
-    @include font-size(type-scale('body-xs-size'));
-    line-height: $text-body-line-height;
-}
-
 
 
 body {
@@ -129,40 +21,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title {
-    @include test-text-title-xxl;
+    @include text-title-xxl;
     margin-bottom: .25em;
 }
 
 .intro {
-    @include test-text-body-xl;
+    @include text-body-xl;
 }
 
 .note {
-    @include test-text-body-xs;
-}
-
-h1 {
-    @include test-text-title-xl;
-    margin-bottom: .25em;
-}
-
-h2 {
-    @include test-text-title-lg;
-    margin-bottom: .45em;
-}
-
-h3 {
-    @include test-text-title-md;
-}
-
-h4 {
-    @include test-text-title-sm;
-}
-
-h5 {
-    @include test-text-title-xs;
-}
-
-h6 {
-    @include test-text-title-xxs;
+    @include text-body-xs;
 }

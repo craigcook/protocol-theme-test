@@ -36,6 +36,31 @@
 }
 
 
+// Get a type scale value from the $theme-type-scale map
+// Usage:
+//    type-scale('title-xl-size');
+//
+// Size values are define in pixels. Use with the font-size()
+// mixin to output rem with px fallback:
+//    @include font-size(type-scale('title-xl-size'));
+//
+// Line-height values are proportional so they can be called directly:
+//    line-height: type-scale('title-xl-line-height');
+
+@function type-scale($scale) {
+  @if not $scale {
+    @return false;
+  }
+
+  @if not map-has-key($theme-type-scale, $scale) {
+    @error '`#{$scale}` is not a valid type scale token. '
+      + 'Valid tokens: #{map-keys($theme-type-scale)}';
+  }
+
+  @return map-get($theme-type-scale, $scale);
+}
+
+
 // Consistent font sizes. Avoid sizing text arbitrarily and use this
 // set of predefined sizes. Sizes adapt at common breakpoints, and
 // there's some redundancy at smaller sizes because we don't want things
@@ -45,71 +70,112 @@
 //  .subtitle { @include text-title-lg; }
 //  .intro { @include text-body-lg; }
 
-$text-body-line-height: $font-base-line-height;
-$text-title-line-height: 1.1;
-
-// display copy: headings, blockquotes, other fancy stuff
-@mixin text-title-xxl { // Use this one sparingly.
-    @include font-size(48px);
-    line-height: $text-title-line-height;
+@mixin text-title-xxl {
+    @include font-size(type-scale('title-xl-size'));
+    line-height: type-scale('title-xl-line-height');
 
     @media #{$mq-md} {
-        @include font-size(64px);
+        @include font-size(type-scale('title-xxl-size'));
+        line-height: type-scale('title-xxl-line-height');
     }
 }
 
 @mixin text-title-xl {
-    @include font-size(40px);
-    line-height: $text-title-line-height;
+    @include font-size(type-scale('title-lg-size'));
+    line-height: type-scale('title-lg-line-height');
 
     @media #{$mq-md} {
-        @include font-size(56px);
+        @include font-size(type-scale('title-xl-size'));
+        line-height: type-scale('title-xl-line-height');
     }
 }
 
 @mixin text-title-lg {
-    @include font-size(32px);
-    line-height: $text-title-line-height;
+    @include font-size(type-scale('title-md-size'));
+    line-height: type-scale('title-md-line-height');
 
     @media #{$mq-md} {
-        @include font-size(48px);
+        @include font-size(type-scale('title-lg-size'));
+        line-height: type-scale('title-lg-line-height');
     }
 }
 
 @mixin text-title-md {
-    @include font-size(24px);
-    line-height: $text-title-line-height;
+    @include font-size(type-scale('title-sm-size'));
+    line-height: type-scale('title-sm-line-height');
 
     @media #{$mq-md} {
-        @include font-size(40px);
+        @include font-size(type-scale('title-md-size'));
+        line-height: type-scale('title-md-line-height');
     }
 }
 
 @mixin text-title-sm {
-    @include font-size(21px);
-    line-height: $text-title-line-height;
+    @include font-size(type-scale('title-xs-size'));
+    line-height: type-scale('title-xs-line-height');
 
     @media #{$mq-md} {
-        @include font-size(32px);
+        @include font-size(type-scale('title-sm-size'));
+        line-height: type-scale('title-sm-line-height');
     }
 }
 
 @mixin text-title-xs {
-    @include font-size(18px);
-    line-height: $text-title-line-height;
+    @include font-size(type-scale('title-xxs-size'));
+    line-height: type-scale('title-xxs-line-height');
 
     @media #{$mq-md} {
-        @include font-size(24px);
+        @include font-size(type-scale('title-xs-size'));
+        line-height: type-scale('title-xs-line-height');
     }
 }
 
 @mixin text-title-xxs {
-    @include font-size(16px);
-    line-height: $text-title-line-height;
+    @include font-size(type-scale('title-xxxs-size'));
+    line-height: type-scale('title-xxxs-line-height');
+
+    @media #{$mq-md} {
+        @include font-size(type-scale('title-xxs-size'));
+        line-height: type-scale('title-xxs-line-height');
+    }
 }
 
-// backwards compatibility
+@mixin text-title-xxxs {
+    @include font-size(type-scale('title-xxxs-size'));
+    line-height: type-scale('title-xxxs-line-height');
+}
 
+
+// body copy
+@mixin text-body-xl {
+    @include font-size(type-scale('body-xl-size'));
+    line-height: type-scale('body-line-height');
+}
+
+@mixin text-body-lg {
+    @include font-size(type-scale('body-lg-size'));
+    line-height: type-scale('body-line-height');
+}
+
+@mixin text-body-md {
+    @include font-size(type-scale('body-md-size'));
+    line-height: type-scale('body-line-height');
+}
+
+@mixin text-body-sm {
+    @include font-size(type-scale('body-sm-size'));
+    line-height: type-scale('body-line-height');
+}
+
+@mixin text-body-xs {
+    @include font-size(type-scale('body-xs-size'));
+    line-height: type-scale('body-line-height');
+}
+
+
+// backwards compatibility
+$text-body-line-height: $font-base-line-height;
+$text-title-line-height: type-scale('title-md-line-height');
 $text-display-line-height: $text-title-line-height;
 @mixin text-display-xxl { @include text-title-xxl; }
 @mixin text-display-xl { @include text-title-xl; }
@@ -118,36 +184,6 @@ $text-display-line-height: $text-title-line-height;
 @mixin text-display-sm { @include text-title-sm; }
 @mixin text-display-xs { @include text-title-xs; }
 @mixin text-display-xxs { @include text-title-xxs; }
-
-// body copy
-@mixin text-body-xl {
-    @include font-size(21px);
-    line-height: $text-body-line-height;
-}
-
-@mixin text-body-lg {
-    @include font-size(18px);
-    line-height: $text-body-line-height;
-}
-
-@mixin text-body-md {
-    @include font-size(16px);
-    line-height: $text-body-line-height;
-}
-
-@mixin text-body-sm {
-    @include font-size(14px);
-    line-height: $text-body-line-height;
-}
-
-@mixin text-body-xs {
-    @include font-size(12px);
-    line-height: $text-body-line-height;
-}
-
-@mixin text-body-cta {
-    @include font-size(16px);
-    line-height: $text-body-line-height;
-}
+@mixin text-body-cta { @include text-body-md; }
 
 

@@ -1,13 +1,23 @@
-@import '../protocol/includes/lib';
+// Fonts
+@import '../includes/fonts/inter';
+@import '../includes/fonts/metropolis';
+
+// temporary until we can update tokens
+$font-stack-base: Inter, X-LocaleSpecific, sans-serif;
+$font-stack-firefox: Metropolis, Inter, X-LocaleSpecific, sans-serif;
+$font-stack-mozilla: 'Zilla Slab', Inter, X-LocaleSpecific, sans-serif;
+
 
 $theme-fonts: (
-    title-font-family: $font-metropolis,
-    body-font-family: $font-inter,
+    title-font-family: $font-stack-firefox,
+    body-font-family: $font-stack-base,
 );
 
 $theme-colors: (
     title-text-color: $color-ink-80,
     body-text-color: $color-ink-80,
+    title-text-color-light: $color-white,
+    title-body-color-light: $color-white,
 );
 
 $theme-type-scale: (
