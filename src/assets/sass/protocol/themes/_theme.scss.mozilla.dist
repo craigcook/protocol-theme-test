@@ -1,11 +1,21 @@
-// Fonts
-@import '../includes/fonts/inter';
-@import '../includes/fonts/zilla-slab';
+// Protocol theme for Mozilla branded websites.
+//
+// Distinguishing features:
+//  - Titles are set in Zilla Slab
+//  - Title type scale is proportioned to Zilla Slab
+//  - Text is black
 
 // temporary until we can update tokens
 $font-stack-base: Inter, X-LocaleSpecific, sans-serif;
 $font-stack-firefox: Metropolis, Inter, X-LocaleSpecific, sans-serif;
 $font-stack-mozilla: 'Zilla Slab', Inter, X-LocaleSpecific, sans-serif;
+
+$image-path: '../img' !default;
+$font-path: '../fonts' !default;
+
+// Fonts
+@import 'includes/fonts/inter';
+@import 'includes/fonts/zilla-slab';
 
 
 $theme-fonts: (
@@ -14,10 +24,21 @@ $theme-fonts: (
 );
 
 $theme-colors: (
+    background-color: $color-white,
+    background-color-alt: $color-light-gray-10,
+    background-color-dark: $color-dark-gray-80,
     title-text-color: $color-black,
-    body-text-color: $color-black,
     title-text-color-light: $color-white,
-    title-body-color-light: $color-white,
+    body-text-color: $color-black,
+    body-text-color-alt: $color-dark-gray-70,
+    body-text-color-light: $color-white,
+    link-color: $color-link,
+    link-color-visited: $color-link-visited,
+    link-color-hover: $color-link-hover,
+    link-color-light: $color-blue-20,
+    link-color-visited-light: $color-purple-20,
+    link-color-hover-light: $color-blue-10,
+    link-color-visited-hover-light: $color-purple-10,
 );
 
 $theme-type-scale: (

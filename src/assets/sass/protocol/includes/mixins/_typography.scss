@@ -47,18 +47,18 @@
 // Line-height values are proportional so they can be called directly:
 //    line-height: type-scale('title-xl-line-height');
 
-@function type-scale($scale) {
-  @if not $scale {
-    @return false;
-  }
+// @function type-scale($scale) {
+//   @if not $scale {
+//     @return false;
+//   }
 
-  @if not map-has-key($theme-type-scale, $scale) {
-    @error '`#{$scale}` is not a valid type scale token. '
-      + 'Valid tokens: #{map-keys($theme-type-scale)}';
-  }
+//   @if not map-has-key($theme, $scale) {
+//     @error '`#{$scale}` is not a valid type scale token. '
+//       + 'Valid tokens: #{map-keys($theme)}';
+//   }
 
-  @return map-get($theme-type-scale, $scale);
-}
+//   @return map-get($theme, $scale);
+// }
 
 
 // Consistent font sizes. Avoid sizing text arbitrarily and use this

@@ -6,29 +6,30 @@
 // Theme test
 @import '../protocol/includes/lib';
 @import '../docs/protocol';
-@import '../docs/protocol-extra';
+@import '../docs/protocol-components';
 
-
-body {
-  font-family: map-get($theme-fonts, 'body-font-family');
-  color: map-get($theme-colors, 'body-text-color');
-  line-height: type-scale('body-line-height');
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: map-get($theme-fonts, 'title-font-family');
-    color: map-get($theme-colors, 'title-text-color');
-}
 
 .title {
     @include text-title-xxl;
     margin-bottom: .25em;
 }
 
+.sub-title {
+    @include text-title-lg;
+}
+
 .intro {
     @include text-body-xl;
 }
 
+.sub-intro {
+    @include text-body-lg;
+}
+
 .note {
+    @include text-body-sm;
+}
+
+.sub-note {
     @include text-body-xs;
 }
