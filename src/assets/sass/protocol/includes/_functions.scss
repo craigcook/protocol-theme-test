@@ -47,7 +47,7 @@
 }
 
 
-// Get a type scale value from the $theme-type-scale map
+// Get a type scale value from the scale map
 // Usage:
 //    type-scale('title-xl-size');
 //
@@ -57,16 +57,26 @@
 //
 // Line-height values are proportional so they can be called directly:
 //    line-height: type-scale('title-xl-line-height');
+//
+// An alternative, condensed type scale is both defined and enabled
+// in _theme.scss. When that scale is enabled this function will draw
+// its values from the condensed map.
 
 @function type-scale($scale) {
   @if not $scale {
     @return false;
   }
 
-  @if not map-has-key($theme-type-scale, $scale) {
-    @error '`#{$scale}` is not a valid type scale token. '
-      + 'Valid tokens: #{map-keys($theme-type-scale)}';
+  $scale-map: $theme-type-scale;
+
+  @if $theme-use-condensed-type-scale == true {
+    $scale-map: $theme-type-scale-condensed;
   }
 
-  @return map-get($theme-type-scale, $scale);
+  @if not map-has-key($scale-map, $scale) {
+    @error '`#{$scale}` is not a valid type scale token. '
+      + 'Valid tokens: #{map-keys($scale-map)}';
+  }
+
+  @return map-get($scale-map, $scale);
 }

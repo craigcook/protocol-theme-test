@@ -17,9 +17,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-// Type scale defined in includes/mixins/_typography.scss
+// Type scale mixins can be found in includes/mixins/_typography.scss
+// Sizes are defined in _theme.scss
 h1 {
-    @include text-title-xxl;
+    @include text-title-2xl;
     margin-bottom: .25em;
 }
 

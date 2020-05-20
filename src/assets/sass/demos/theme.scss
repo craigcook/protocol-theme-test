@@ -4,13 +4,14 @@
 
 //* -------------------------------------------------------------------------- */
 // Theme test
+
 @import '../protocol/includes/lib';
 @import '../docs/protocol';
 @import '../docs/protocol-components';
 
 
 .title {
-    @include text-title-xxl;
+    @include text-title-2xl;
     margin-bottom: .25em;
 }
 
