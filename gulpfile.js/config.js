@@ -87,7 +87,10 @@ module.exports = {
     },
     sassCopy: {
         protocol: {
-            src: `${src}/sass/protocol/**/*.scss`,
+            src: [
+                `${src}/sass/protocol/**/*.scss`,
+                `${src}/sass/protocol/**/*.dist`,
+            ],
             dest: `${dest}/protocol/protocol/css/`
         },
         docs: {

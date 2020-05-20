@@ -18,14 +18,9 @@ $font-stack-mozilla: 'Zilla Slab', Inter, X-LocaleSpecific, sans-serif;
 $image-path: '../img' !default;
 $font-path: '../fonts' !default;
 
-// If true, switch to the condensed type scale.
-$theme-use-condensed-type-scale: false !default;
 
 //* -------------------------------------------------------------------------- */
 // Fonts
-
-@import 'includes/fonts/inter';
-@import 'includes/fonts/metropolis';
 
 $theme-fonts: (
     title-font-family: $font-stack-firefox,
@@ -95,7 +90,10 @@ $theme-type-scale: (
 //
 // This smaller scale is primarily intended for web apps.
 // Use the standard type scale for marketing sites.
-//
+
+// If true, switch to the condensed type scale.
+$theme-use-condensed-type-scale: false !default;
+
 // The type-scale() function draws from this map
 // to generate different sizing when
 // $theme-use-condensed-type-scale is set to 'true'.
