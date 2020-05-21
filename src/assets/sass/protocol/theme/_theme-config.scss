@@ -10,6 +10,7 @@
 //  * Title type scale is proportioned to Metropolis
 //  * Text is color-ink-80 (dark purple)
 
+
 // temporary until we can update tokens
 $font-stack-base: Inter, X-LocaleSpecific, sans-serif;
 $font-stack-firefox: Metropolis, Inter, X-LocaleSpecific, sans-serif;
@@ -19,11 +20,20 @@ $image-path: '../img' !default;
 $font-path: '../fonts' !default;
 
 
+$brand-theme: 'firefox' !default;
+$type-scale: 'normal' !default;
+
+
 //* -------------------------------------------------------------------------- */
 // Fonts
 
-$theme-fonts: (
+$theme-fonts-firefox: (
     title-font-family: $font-stack-firefox,
+    body-font-family: $font-stack-base,
+);
+
+$theme-fonts-mozilla: (
+    title-font-family: $font-stack-mozilla,
     body-font-family: $font-stack-base,
 );
 
@@ -31,7 +41,7 @@ $theme-fonts: (
 //* -------------------------------------------------------------------------- */
 // Colors
 
-$theme-colors: (
+$theme-colors-firefox: (
     background-color: $color-white,
     background-color-alt: $color-light-gray-10,
     background-color-inverse: $color-ink-80,
@@ -39,6 +49,25 @@ $theme-colors: (
     title-text-color-inverse: $color-white,
     body-text-color: $color-ink-80,
     body-text-color-alt: $color-ink-70,
+    body-text-color-inverse: $color-white,
+    link-color: $color-link,
+    link-color-visited: $color-link-visited,
+    link-color-hover: $color-link-hover,
+    link-color-visited-hover: $color-link-hover,
+    link-color-inverse: $color-blue-20,
+    link-color-visited-inverse: $color-purple-20,
+    link-color-hover-inverse: $color-blue-10,
+    link-color-visited-hover-inverse: $color-purple-10,
+);
+
+$theme-colors-mozilla: (
+    background-color: $color-white,
+    background-color-alt: $color-light-gray-10,
+    background-color-inverse: $color-moz-dark-green,
+    title-text-color: $color-black,
+    title-text-color-inverse: $color-white,
+    body-text-color: $color-black,
+    body-text-color-alt: $color-dark-gray-90,
     body-text-color-inverse: $color-white,
     link-color: $color-link,
     link-color-visited: $color-link-visited,
@@ -59,7 +88,7 @@ $theme-colors: (
 //
 // Avoid referencing these values directly; Use the function.
 
-$theme-type-scale: (
+$theme-type-scale-firefox: (
     title-2xl-size: 64px,
     title-2xl-line-height: 1.125,
     title-xl-size: 56px,
@@ -84,6 +113,31 @@ $theme-type-scale: (
     body-line-height: 1.5,
 );
 
+$theme-type-scale-mozilla: (
+    title-2xl-size: 76px,
+    title-2xl-line-height: 1,
+    title-xl-size: 66px,
+    title-xl-line-height: 1,
+    title-lg-size: 56px,
+    title-lg-line-height: 1,
+    title-md-size: 48px,
+    title-md-line-height: 1,
+    title-sm-size: 38px,
+    title-sm-line-height: 1,
+    title-xs-size: 28px,
+    title-xs-line-height: 1,
+    title-2xs-size: 24px,
+    title-2xs-line-height: 1,
+    title-3xs-size: 16px,
+    title-3xs-line-height: 1,
+    body-xl-size: 21px,
+    body-lg-size: 18px,
+    body-md-size: 16px,
+    body-sm-size: 14px,
+    body-xs-size: 12px,
+    body-line-height: 1.5,
+);
+
 
 //* -------------------------------------------------------------------------- */
 // Condensed Type scale
@@ -100,7 +154,7 @@ $theme-use-condensed-type-scale: false !default;
 //
 // Avoid referencing these values directly; Use the function.
 
-$theme-type-scale-condensed: (
+$theme-type-scale-condensed-firefox: (
     title-2xl-size: 32px,
     title-2xl-line-height: 1.125,
     title-xl-size: 24px,
@@ -125,4 +179,31 @@ $theme-type-scale-condensed: (
     body-line-height: 1.5,
 );
 
-$theme: map-collect($theme-fonts, $theme-type-scale, $theme-colors);
+$theme-type-scale-condensed-mozilla: (
+    title-2xl-size: 32px,
+    title-2xl-line-height: 1.125,
+    title-xl-size: 24px,
+    title-xl-line-height: 1.166,
+    title-lg-size: 21px,
+    title-lg-line-height: 1.2,
+    title-md-size: 18px,
+    title-md-line-height: 1.2,
+    title-sm-size: 16px,
+    title-sm-line-height: 1.25,
+    title-xs-size: 14px,
+    title-xs-line-height: 1.25,
+    title-2xs-size: 14px,
+    title-2xs-line-height: 1.25,
+    title-3xs-size: 14px,
+    title-3xs-line-height: 1.25,
+    body-xl-size: 18px,
+    body-lg-size: 16px,
+    body-md-size: 14px,
+    body-sm-size: 12px,
+    body-xs-size: 11px,
+    body-line-height: 1.5,
+);
+
+
+$theme-firefox: map-collect($theme-fonts-firefox, $theme-colors-firefox, $theme-type-scale-firefox);
+$theme-mozilla: map-collect($theme-fonts-mozilla, $theme-colors-mozilla, $theme-type-scale-mozilla);

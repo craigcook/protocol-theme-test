@@ -49,28 +49,37 @@
 
 // Get a type scale value from the scale map
 // Usage:
-//    type-scale('title-xl-size');
+//    type-scale('scale-value');
 //
-// Size values are define in pixels. Use with the font-size()
-// mixin to output rem with px fallback:
+// Size values are define in pixels. Use the font-size() mixin
+// to convert to rem with px fallback. Example:
 //    @include font-size(type-scale('title-xl-size'));
 //
-// Line-height values are proportional so they can be called directly:
-//    line-height: type-scale('title-xl-line-height');
-//
-// An alternative, condensed type scale is both defined and enabled
-// in _theme.scss. When that scale is enabled this function will draw
-// its values from the condensed map.
+// An alternative, condensed type scale is defined in a separate
+// map. When the $type-scale variable is set to 'condensed' this
+// function will draw its values from that alternative map.
 
 @function type-scale($scale) {
   @if not $scale {
     @return false;
   }
 
-  $scale-map: $theme-type-scale;
+  // Default to Firefox brand scale
+  $scale-map: $theme-type-scale-firefox;
 
-  @if $theme-use-condensed-type-scale == true {
-    $scale-map: $theme-type-scale-condensed;
+  // Firefox condensed
+  @if $type-scale == 'condensed' {
+    $scale-map: $theme-type-scale-condensed-firefox;
+  }
+
+  // Switch to Mozilla brand scale
+  @if $brand-theme == 'mozilla' {
+    $scale-map: $theme-type-scale-condensed-mozilla;
+  }
+
+  // Mozilla condensed
+  @if $brand-theme == 'mozilla' and $type-scale == 'condensed' {
+    $scale-map: $theme-type-scale-condensed-mozilla;
   }
 
   @if not map-has-key($scale-map, $scale) {
@@ -80,3 +89,29 @@
 
   @return map-get($scale-map, $scale);
 }
+
+
+@function get-theme($var) {
+  @if not $var {
+    @return false;
+  }
+
+  // Default to Firefox theme
+  $theme-map: $theme-firefox;
+
+  // Switch to Mozilla theme
+  @if $brand-theme == 'mozilla' {
+    $theme-map: $theme-mozilla;
+  }
+
+  @if not map-has-key($theme-map, $var) {
+    @error '`#{$var}` is not a valid theme token. '
+      + 'Valid tokens: #{map-keys($theme-map)}';
+  }
+
+  @return map-get($theme-map, $var);
+}
+
+
+
+

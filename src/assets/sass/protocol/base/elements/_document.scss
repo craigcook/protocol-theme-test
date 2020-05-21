@@ -13,15 +13,15 @@ html {
 body {
     @include text-body-md;
     background: $color-white;
-    color: map-get($theme, 'body-text-color');
-    font-family: map-get($theme, 'body-font-family');
+    color: get-theme('body-text-color');
+    font-family: get-theme('body-font-family');
     line-height: type-scale('body-line-height');
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
 .mzp-t-dark {
-    color: map-get($theme, 'body-text-color-light');
+    color: get-theme('body-text-color-inverse');
 }
 
 // A few places use a class to hide elements. We should try to avoid that.

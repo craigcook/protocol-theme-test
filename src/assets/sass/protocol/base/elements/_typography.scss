@@ -6,13 +6,13 @@
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: map-get($theme, 'title-font-family');
-    color: map-get($theme, 'title-text-color');
+    font-family: get-theme('title-font-family');
+    color: get-theme('title-text-color');
     font-weight: bold;
     margin: 0 0 .5em;
 
     .mpz-t-dark & {
-        color: map-get($theme, 'title-text-color-light');
+        color: get-theme('title-text-color-inverse');
     }
 }
 

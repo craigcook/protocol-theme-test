@@ -5,6 +5,9 @@
 //* -------------------------------------------------------------------------- */
 // Theme test
 
+// $brand-theme: 'mozilla' !default;
+// $type-scale: 'condensed' !default;
+
 @import '../protocol/includes/lib';
 @import '../docs/protocol';
 @import '../docs/protocol-components';
@@ -12,7 +15,8 @@
 
 .title {
     @include text-title-2xl;
-    margin-bottom: .25em;
+    background: get-theme('background-color-inverse');
+    color: get-theme('title-text-color-inverse');
 }
 
 .sub-title {

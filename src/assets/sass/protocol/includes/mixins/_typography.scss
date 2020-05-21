@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
+//* -------------------------------------------------------------------------- */
 // Font families
 @mixin font-base {
     font-family: $font-base-family;
@@ -16,6 +17,8 @@
     font-family: $font-metropolis;
 }
 
+
+//* -------------------------------------------------------------------------- */
 // A mixin to output font-size in rems with a px fallback for old browsers.
 // Declare sizes in pixels for ease and clarity, the mixin does the math.
 // Requires: remify(), pixify() - defined in includes/functions.scss.
@@ -36,35 +39,12 @@
 }
 
 
-// Get a type scale value from the $theme-type-scale map
-// Usage:
-//    type-scale('title-xl-size');
-//
-// Size values are define in pixels. Use with the font-size()
-// mixin to output rem with px fallback:
-//    @include font-size(type-scale('title-xl-size'));
-//
-// Line-height values are proportional so they can be called directly:
-//    line-height: type-scale('title-xl-line-height');
-
-// @function type-scale($scale) {
-//   @if not $scale {
-//     @return false;
-//   }
-
-//   @if not map-has-key($theme, $scale) {
-//     @error '`#{$scale}` is not a valid type scale token. '
-//       + 'Valid tokens: #{map-keys($theme)}';
-//   }
-
-//   @return map-get($theme, $scale);
-// }
-
-
+//* -------------------------------------------------------------------------- */
 // Consistent font sizes. Avoid sizing text arbitrarily and use this
 // set of predefined sizes. Sizes adapt at common breakpoints, and
 // there's some redundancy at smaller sizes because we don't want things
 // getting too tiny.
+//
 // Example usage:
 //  .title { @include text-title-xl; }
 //  .subtitle { @include text-title-lg; }
@@ -173,7 +153,7 @@
 }
 
 
-// backwards compatibility
+// Aliases for backwards compatibility (v11.0.2)
 $text-body-line-height: $font-base-line-height;
 $text-title-line-height: type-scale('title-md-line-height');
 $text-display-line-height: $text-title-line-height;
