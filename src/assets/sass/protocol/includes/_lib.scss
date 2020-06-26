@@ -4,7 +4,8 @@
 
 // Import all the things!
 @import './node_modules/@mozilla-protocol/tokens/dist/index.scss';
-@import '../theme/theme-config';
+@import '../config';
+@import 'themes';
 @import 'variables';
 @import 'functions';
 @import 'mixins';
