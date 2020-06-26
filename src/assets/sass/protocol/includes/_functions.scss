@@ -74,7 +74,7 @@
 
   // Switch to Mozilla brand scale
   @if $brand-theme == 'mozilla' {
-    $scale-map: $theme-type-scale-condensed-mozilla;
+    $scale-map: $theme-type-scale-mozilla;
   }
 
   // Mozilla condensed
@@ -90,6 +90,10 @@
   @return map-get($scale-map, $scale);
 }
 
+
+// Get a theme variable from the collected map.
+// This swaps the map based on the value of $brand-theme.
+// Theme maps are defined in includes/_theme.scss
 
 @function get-theme($var) {
   @if not $var {

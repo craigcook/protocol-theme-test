@@ -5,8 +5,9 @@
 //* -------------------------------------------------------------------------- */
 // Theme test
 
-// $brand-theme: 'mozilla' !default;
+$brand-theme: 'mozilla' !default;
 // $type-scale: 'condensed' !default;
+
 
 @import '../protocol/includes/lib';
 @import '../docs/protocol';
@@ -21,6 +22,7 @@
 
 .sub-title {
     @include text-title-lg;
+    color: get-theme('body-text-color-alt');
 }
 
 .intro {

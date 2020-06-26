@@ -9,23 +9,22 @@ styles:
 ---
 
 {{#with (data "specimens")}}
-<div class="mzp-l-content mzp-t-narrow">
-  <div class="container">
-    <h1 class="title">Title XXL</h1>
-    <p class="intro">Body XL {{sentence}}</p>
-    <p class="sub-intro">Body LG {{sentence}}</p>
-    <p>Body MD {{paragraph}}</p>
-    <p class="note">Body SM {{heading}}</p>
-    <p class="sub-note">Body XS {{heading}}</p>
+<div class="mzp-l-content mzp-t-content-md">
+  <h1 class="title">Title XXL</h1>
+  <h2 class="sub-title">Title LG, color alt</h2>
+  <p class="intro">Body XL {{sentence}}</p>
+  <p class="sub-intro">Body LG {{sentence}}</p>
+  <p>Body MD {{paragraph}}</p>
+  <p class="note">Body SM {{heading}}</p>
+  <p class="sub-note">Body XS {{heading}}</p>
 
-    <hr>
+  <hr>
 
-    <h1>Title XL {{heading}}</h1>
-    <h2>Title LG {{heading}}</h2>
-    <h3>Title MD {{heading}}</h3>
-    <h4>Title SM {{heading}}</h4>
-    <h5>Title XS {{heading}}</h5>
-    <h6>Title XXS {{heading}}</h6>
-  </div>
+  <h1>Title XL {{heading}}</h1>
+  <h2>Title LG {{heading}}</h2>
+  <h3>Title MD {{heading}}</h3>
+  <h4>Title SM {{heading}}</h4>
+  <h5>Title XS {{heading}}</h5>
+  <h6>Title XXS {{heading}}</h6>
 </div>
 {{/with}}

@@ -2,23 +2,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-//* -------------------------------------------------------------------------- */
-// Protocol theme for Firefox branded websites.
-//
-// Distinguishing features of this theme:
-//  * Titles are set in Metropolis
-//  * Title type scale is proportioned to Metropolis
-//  * Text is color-ink-80 (dark purple)
 
-
-// temporary until we can update tokens
-$font-stack-base: Inter, X-LocaleSpecific, sans-serif;
-$font-stack-firefox: Metropolis, Inter, X-LocaleSpecific, sans-serif;
-$font-stack-mozilla: 'Zilla Slab', Inter, X-LocaleSpecific, sans-serif;
-
-$image-path: '../img' !default;
-$font-path: '../fonts' !default;
-
+// Declare the theme defaults for your project
 
 $brand-theme: 'firefox' !default;
 $type-scale: 'normal' !default;
@@ -63,7 +48,7 @@ $theme-colors-firefox: (
 $theme-colors-mozilla: (
     background-color: $color-white,
     background-color-alt: $color-light-gray-10,
-    background-color-inverse: $color-moz-dark-green,
+    background-color-inverse: $color-black,
     title-text-color: $color-black,
     title-text-color-inverse: $color-white,
     body-text-color: $color-black,
@@ -145,14 +130,10 @@ $theme-type-scale-mozilla: (
 // This smaller scale is primarily intended for web apps.
 // Use the standard type scale for marketing sites.
 
-// If true, switch to the condensed type scale.
-$theme-use-condensed-type-scale: false !default;
-
-// The type-scale() function draws from this map
-// to generate different sizing when
-// $theme-use-condensed-type-scale is set to 'true'.
+// The type-scale() function draws from this map to output
+// different sizing based on the $type-scale variable.
 //
-// Avoid referencing these values directly; Use the function.
+// Avoid referencing these values directly.
 
 $theme-type-scale-condensed-firefox: (
     title-2xl-size: 32px,
@@ -204,6 +185,11 @@ $theme-type-scale-condensed-mozilla: (
     body-line-height: 1.5,
 );
 
+
+// Collect the maps for easier reference, so you don't have to
+// remember which map each variable is in when you use it.
+// Usage:
+//  .my-component { @include font-size(24px); }
 
 $theme-firefox: map-collect($theme-fonts-firefox, $theme-colors-firefox, $theme-type-scale-firefox);
 $theme-mozilla: map-collect($theme-fonts-mozilla, $theme-colors-mozilla, $theme-type-scale-mozilla);
