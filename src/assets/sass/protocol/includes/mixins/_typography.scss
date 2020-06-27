@@ -6,15 +6,15 @@
 //* -------------------------------------------------------------------------- */
 // Font families
 @mixin font-base {
-    font-family: $font-base-family;
+    font-family: $font-stack-base;
 }
 
 @mixin font-mozilla {
-    font-family: $font-zilla-slab;
+    font-family: $font-stack-mozilla;
 }
 
 @mixin font-firefox {
-    font-family: $font-metropolis;
+    font-family: $font-stack-firefox;
 }
 
 
@@ -153,8 +153,8 @@
 }
 
 
-// Aliases for backwards compatibility (v11.0.2)
-$text-body-line-height: $font-base-line-height;
+// Aliases for backwards compatibility
+$text-body-line-height: type-scale('body-line-height');
 $text-title-line-height: type-scale('title-md-line-height');
 $text-display-line-height: $text-title-line-height;
 @mixin text-display-xxl { @include text-title-2xl; }

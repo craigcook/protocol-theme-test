@@ -11,14 +11,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin: 0 0 .5em;
 
-    .mpz-t-dark & {
+    .mzp-t-dark & {
         color: get-theme('title-text-color-inverse');
     }
 }
 
-
 // Type scale mixins can be found in includes/mixins/_typography.scss
-// Sizes are defined in _theme.scss
+// Sizes are defined in includes/_themes.scss
 h1 {
     @include text-title-2xl;
     margin-bottom: .25em;
@@ -43,16 +42,4 @@ h5 {
 
 h6 {
     @include text-title-xs;
-}
-
-p,
-ul,
-ol,
-dl,
-table {
-    margin: 0 0 1.25em;
-}
-
-code {
-    font-size: .875em;
 }

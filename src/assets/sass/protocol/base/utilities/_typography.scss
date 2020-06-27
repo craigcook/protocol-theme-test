@@ -4,7 +4,7 @@
 
 @import '../../includes/lib';
 
-.mzp-u-title-xxl {
+.mzp-u-title-2xl {
     @include text-title-2xl;
 
     .mzp-t-mozilla {
@@ -100,7 +100,7 @@
     }
 }
 
-.mzp-u-title-xxs {
+.mzp-u-title-2xs {
     @include text-title-2xs;
 
     .mzp-t-mozilla {

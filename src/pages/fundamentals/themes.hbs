@@ -4,21 +4,28 @@ name: Themes
 order: 2
 ---
 
-<p>By default the site will render using the Inter typeface. For a more brand-specific experience some theme classes and mixins are available</p>
+<p>Protocol supports two distinct brands: Firefox and Mozilla.</p>
 
-<div class="mzp-t-mozilla">
-<h2>Mozilla</h2>
-<p>The <code>.mzp-t-mozilla</code> class can be applied to the page body and to some organisms to use Zilla Slab for the display font.</p>
-<p>You can declare Zilla Slab as the display font explicitly in the CSS using <code>@include font-mozilla;</code></p>
-</div>
+<p>The Mozilla brand is distinguished by the Zilla Slab typeface and a limited color palette, mostly black and white. The Firefox brand uses the Metropolis typeface and is much more colorful overall.</p>
 
-<div class="mzp-t-firefox">
-<h2>Firefox</h2>
-<p>The <code>.mzp-t-firefox</code> class can be applied to the page body and to some organisms. It will:</p>
-<ul>
-  <li>Change the text color to <code>$color-off-black</code>.</li>
-  <li>Use Metropolis for the display font.</li>
-  <li>Use Metropolis for calls to action.</li>
-</ul>
-<p>You can declare Metropolis as the display font explicitly in the CSS using <code>@include font-firefox;</code>
-</div>
+<p>Our CSS framework achieves this by assigning variables to some style properties, then drawing from different sets of values to apply different styling based on which brand is represented on the page. These variables are collected into maps and we then use functions in SCSS to swap to a different map based on a single theme variable:</p>
+
+<pre class="protosite-pattern-code"><code class="language-scss">$brand-theme: 'firefox';</code></pre>
+
+<p>Protocol defaults to the Firefox brand "out of the box." If you use the packaged, pre-compiled CSS, you'll have everything you need for a Firefox-branded website without needing to compile the SCSS yourself. Though we still recommend doing your own compiling so you can import just the components you need. If you want to produce a Mozilla-branded website you'll need to compile the Protocol SCSS and change that <code>$brand-theme</code> variable:</p>
+
+<pre class="protosite-pattern-code"><code class="language-scss">$brand-theme: 'mozilla';</code></pre>
+
+<h2>Type scales</h2>
+
+<p>Protocol uses a modular type scale with a range of predefined font sizes (to avoid sizing text willy nilly). Scale sizes and line heights are defined as part of the brand theme.</p>
+
+<p>Additionally, there are two different scales available: a standard scale with large titles, appropriate for most general websites (like marketing sites, blogs, etc) and a condensed scale with smaller sizes more suitable for web applications.</p>
+
+<p>Protocol defaults to the standard (big titles) type scale:</p>
+
+<pre class="protosite-pattern-code"><code class="language-scss">$type-scale: 'standard';</code></pre>
+
+<p>You can activate the condensed type scale by setting a variable when you compile the SCSS:</p>
+
+<pre class="protosite-pattern-code"><code class="language-scss">$type-scale: 'condensed';</code></pre>

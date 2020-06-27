@@ -29,7 +29,7 @@ $brand-theme: 'firefox' !default;
 // font sizes (to avoid sizing text willy nilly). Scale sizes are
 // defined as part of the brand theme.
 
-// There are two different scales available: a normal scale with
+// There are two different scales available: a standard scale with
 // large headings, appropriate for general websites (like marketing
 // sites, blogs, etc) and a condensed scale with smaller sizes more
 // suitable for web applications.
@@ -37,7 +37,7 @@ $brand-theme: 'firefox' !default;
 // This global variable sets the default type scale for your project.
 
 // Accepted values:
-//     'normal'
+//     'standard'
 //     'condensed'
 
-$type-scale: 'normal' !default;
+$type-scale: 'standard' !default;
